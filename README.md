@@ -1,5 +1,6 @@
 ## 初回環境構築
 > npm install
+
 > cp .env.example .env
 
 ## Sass起動
