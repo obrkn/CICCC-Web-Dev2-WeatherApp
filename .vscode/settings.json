@@ -28,5 +28,8 @@
     }
   },
   "cSpell.enabled": true,
-  "cSpell.words": ["stylelint"]
+  "cSpell.words": ["stylelint"],
+  "html.format.indentInnerHtml": true,
+  "html.format.extraLiners": "",
+  "files.insertFinalNewline": true
 }
