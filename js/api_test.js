@@ -15,5 +15,6 @@ const ApiTest = async () => {
         console.log(error);
     }
 };
+asdfadsfadsfs;
 
 setTimeout(ApiTest, 1000);
