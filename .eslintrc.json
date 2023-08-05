@@ -5,6 +5,9 @@
     "node": true,
     "jest": true
   },
+  "parserOptions": {
+    "sourceType": "module"
+  },
   "extends": ["eslint:recommended", "prettier"],
   "root": true,
   "rules": {
