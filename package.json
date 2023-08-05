@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass scss:css -w",
-    "lint": "yarn eslint && yarn stylelint && yarn prettier",
+    "lint": "npm run eslint && npm run stylelint && npm run prettier",
     "eslint": "eslint --fix './**/*.{js,jsx,ts,tsx}'",
     "stylelint": "stylelint --fix './**/*.{css,scss,sass}'",
     "prettier": "prettier --write './**/*.{ts,tsx,js,jsx,md,html}'",
