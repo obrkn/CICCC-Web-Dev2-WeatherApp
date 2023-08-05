@@ -1,4 +1,4 @@
-const API_KEY = process.env.API_KEY;
+const API_KEY = "9c6c9f9d647a782c8d910a14542ffff5";
 
 const VANCOUVER_LAT = "49.2827";
 const VANCOUVER_LON = "-123.1207";

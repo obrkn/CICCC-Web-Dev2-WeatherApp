@@ -10,17 +10,3 @@ cp apiKey.js.example apiKey.js
 ```sh
 npm run sass
 ```
-
-## OpenWeatherのAPI設定
-
-### アカウント作成する
-
-https://openweathermap.org/
-
-### APIキーを`apiKey.js`ファイルにコピぺ
-
-https://home.openweathermap.org/api_keys
-
-```sh
-open index.html
-```
