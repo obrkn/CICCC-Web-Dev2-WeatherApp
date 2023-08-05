@@ -1,7 +1,7 @@
 ## 初回環境構築
 ```sh
 npm install
-cp .env.example .env
+cp apiKey.js.example apiKey.js
 ```
 
 ## Sass起動
@@ -12,9 +12,8 @@ npm run sass
 ## OpenWeatherのAPI設定
 ### アカウント作成する
 https://openweathermap.org/
-### APIキーを`.env`ファイルにコピぺ
+### APIキーを`apiKey.js`ファイルにコピぺ
 https://home.openweathermap.org/api_keys
-### 導通テスト
 ```sh
-node js/api_test.js
+open index.html
 ```
