@@ -1,13 +1,12 @@
-name: ci eslint
+name: ci lint
 
 on:
-    push
-    # push:
-    #     branches:
-    #         - master
-    # pull_request:
-    #     branches:
-    #         - master
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
 
 jobs:
     build:
@@ -23,7 +22,7 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node-version }}
-            - name: npm install, eslint
+            - name: npm install, lint
               run: |
                   npm install
                   npm run lint
