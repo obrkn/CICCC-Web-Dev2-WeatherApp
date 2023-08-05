@@ -1,0 +1,32 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "node_modules": true
+  },
+  "editor.formatOnSave": true,
+  "eslint.lintTask.enable": true,
+  //   "typescript.tsdk": "node_modules/typescript/lib",
+  "npm.packageManager": "npm",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript][typescriptreact][javascript][javascriptreact][json][graphql][vue][markdown][html]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.packageManager": "npm",
+  "stylelint.validate": ["css", "sass", "scss", "postcss"],
+  "[css][less][scss]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    }
+  },
+  "cSpell.enabled": true,
+  "cSpell.words": ["stylelint"]
+}

@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "root": true,
+  "rules": {
+    // possible problems
+    "array-callback-return": "error",
+    "no-duplicate-imports": "error",
+    // suggestion
+    "default-case": "error",
+    "default-case-last": "error",
+    "default-param-last": ["error"],
+    "max-depth": ["error", 5],
+    "no-eval": "error"
+  }
+}
