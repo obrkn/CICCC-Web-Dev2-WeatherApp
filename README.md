@@ -2,7 +2,6 @@
 
 ```sh
 npm install
-cp apiKey.js.example apiKey.js
 ```
 
 ## Sass起動
