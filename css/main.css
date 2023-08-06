@@ -89,6 +89,33 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
+#hourly h2 {
+  font-size: 2.4rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#hourly .wrapper {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  position: relative;
+  display: flex;
+}
+#hourly .wrapper .card {
+  margin: 0 8px;
+}
+
+#hourly .card {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 20px 0;
+  margin: 0 auto;
+  width: 40%;
+  min-width: 100px;
+}
+
 #select {
   display: flex;
   justify-content: space-between;
