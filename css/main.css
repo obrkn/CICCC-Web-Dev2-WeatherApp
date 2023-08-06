@@ -19,6 +19,41 @@ body {
   margin-bottom: 60px;
 }
 
+#current h2 {
+  font-size: 2.4rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#current h3 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#current .wrapper {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  position: relative;
+}
+
+#current .card {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 0 auto;
+  width: 40%;
+  min-width: 180px;
+}
+
+#current .icon {
+  position: absolute;
+  top: 16px;
+  right: 40px;
+}
+
 #header h1 {
   margin: auto;
   text-align: center;
