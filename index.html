@@ -5,10 +5,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Weather App</title>
         <script type="text/javascript" src="apikey.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
     </head>
     <body>
-        <section id="select"></section>
-        <section id="current"></section>
+        <section id="header">
+            <h1>Weather App</h1>
+        </section>
+        <section id="select" class="container">
+            <select id="favorite-cities">
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <div>
+                <input type="text" id="search-bar" placeholder="Search Bar (Cities)">
+            </div>
+        </section>
+        <section id="current">
+
+        </section>
         <section id="daily"></section>
         <section id="hourly"></section>
         <div>
