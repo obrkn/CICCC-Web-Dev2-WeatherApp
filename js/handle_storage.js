@@ -6,43 +6,25 @@ const cityName = $cityName.textContent;
 const cityLat = $cityLat.textContent;
 const cityLon = $cityLon.textContent;
 
-const favoriteCities = [
-    {
-        name: "",
-        lat: "",
-        lon: "",
-    },
-    {
-        name: "",
-        lat: "",
-        lon: "",
-    },
-];
+const newFavoritecity = {
+    name: cityName,
+    lat: cityLat,
+    lon: cityLon,
+};
+
+const favoriteCities = JSON.parse(localStorage.getItem("favorite")) || [];
 
 const favoriteBtn = () => {
-    // if the city has already existed
-    favoriteCities.forEach((favoriteCity) => {
-        if (cityName === favoriteCity.name) {
-            console.log("Already existed!!");
-            return;
-        } else {
-            favoriteCities.push({ name: "", lat: "", lon: "" });
-        }
-    });
-
-    favoriteCities[0].name = cityName;
-    favoriteCities[0].lat = cityLat;
-    favoriteCities[0].lon = cityLon;
-
-    favoriteCities.forEach((favoriteCity) => {
-        if (cityName === favoriteCity.name) {
-            console.log("Already existed!!");
-            return;
-        } else {
-            return;
-        }
-    });
-
+    const isDataExisted = favoriteCities.some(
+        (favoriteCity) => favoriteCity.name === cityName,
+    );
+    if (isDataExisted) {
+        alert("The city has already saved!!");
+    } else {
+        favoriteCities.push(newFavoritecity);
+        localStorage.setItem("favorite", JSON.stringify(favoriteCities));
+        alert("The city has saved successfully!!");
+    }
     console.log(favoriteCities);
 };
 
