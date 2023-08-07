@@ -1,27 +1,27 @@
 #daily h2 {
-  font-size: 2.4rem;
-  font-weight: 300;
-  margin-bottom: 10px;
-}
-
-#daily .wrapper {
-  text-align: center;
-  border: 1px solid #ccc;
-  padding: 20px;
-  position: relative;
-  display: flex;
-
-  .card {
-    margin: 0 20px;
-  }
+    margin-bottom: 10px;
+    font-size: 2.4rem;
+    font-weight: 300;
 }
 
 #daily .card {
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  padding: 20px 0;
-  margin: 0 auto;
-  width: 40%;
-  min-width: 100px;
+    width: 40%;
+    min-width: 100px;
+    padding: 20px 0;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+}
+
+#daily .wrapper {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+
+    .card {
+        margin: 0 20px;
+    }
 }
