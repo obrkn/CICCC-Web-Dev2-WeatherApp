@@ -18,7 +18,7 @@ function initAutocomplete() {
         document.getElementById("search-bar"),
         {
             types: ["(cities)"],
-            // fields: ["geometry.location", "name"],
+            fields: ["geometry.location", "name"],
         },
     );
     autocomplete.addListener("place_changed", onPlaceChanged);
