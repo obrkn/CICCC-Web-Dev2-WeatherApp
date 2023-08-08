@@ -1,6 +1,3 @@
-// テスト用
-// console.log(CurrentWeather('49.2827', '-123.1207'));
-
 const latitude = "49.2827";
 const longtitude = "-123.1207";
 const API_KEY = "9c6c9f9d647a782c8d910a14542ffff5";

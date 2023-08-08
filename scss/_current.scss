@@ -32,3 +32,8 @@
     top: 16px;
     right: 40px;
 }
+
+#current .fill {
+    display: none;
+    z-index: -10;
+}
