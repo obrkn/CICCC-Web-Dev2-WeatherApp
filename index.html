@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Weather App</title>
-        <script type="text/javascript" src="apikey.js"></script>
         <link rel="stylesheet" type="text/css" href="css/reset.css" />
         <link rel="stylesheet" type="text/css" href="css/main.css" />
     </head>
@@ -25,8 +24,11 @@
         <section id="current" class="container">
             <h2>Current Weather</h2>
             <div class="wrapper">
-                <h3>Vancouver</h3>
-                <p>#C</p>
+                <h3 id="city-name">Vancouver</h3>
+                <p>
+                    <span id="city-lat">49.2827</span>
+                    <span id="city-lon">-123.1207</span>
+                </p>
                 <div class="card">
                     <img src="https://openweathermap.org/img/wn/10d@2x.png">
                     <p>74°F</p>
@@ -147,5 +149,8 @@
         <script src="js/forecast_daily.js"></script>
         <script src="js/forecast_hourly.js"></script>
         <script src="js/handle_storage.js"></script>
+        <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwgTIKn6k1y7xnP5WujXPQyXf9-VdmwPA&libraries=places&callback=initAutocomplete&language=en">
+            </script>
     </body>
 </html>
