@@ -1,3 +1,5 @@
+const $icon = document.querySelector(".icon");
+const $iconFill = document.querySelector(".fill");
 const $cityName = document.querySelector("#city-name");
 const $cityLat = document.querySelector("#city-lat");
 const $cityLon = document.querySelector("#city-lon");
@@ -12,15 +14,31 @@ const newFavoritecity = {
     lon: cityLon,
 };
 
-const favoriteCities = JSON.parse(localStorage.getItem("favorite")) || [];
+let favoriteCities = JSON.parse(localStorage.getItem("favorite")) || [];
+console.log(favoriteCities);
+
+const isDataExisted = favoriteCities.some(
+    (favoriteCity) => favoriteCity.name === cityName,
+);
+
+const isFavorite = () => {
+    if (isDataExisted) {
+        $iconFill.style.display = "block";
+    } else {
+        $iconFill.style.display = "none";
+    }
+};
 
 const favoriteBtn = () => {
-    const isDataExisted = favoriteCities.some(
-        (favoriteCity) => favoriteCity.name === cityName,
-    );
-    if (isDataExisted) {
-        alert("The city has already saved!!");
+    if (favoriteCities.some((favoriteCity) => favoriteCity.name === cityName)) {
+        $iconFill.style.display = "none";
+        const deleteFacorite = favoriteCities.filter(
+            (favoriteCity) => favoriteCity.name !== cityName,
+        );
+        localStorage.setItem("favorite", JSON.stringify(deleteFacorite));
+        favoriteCities = deleteFacorite;
     } else {
+        $iconFill.style.display = "block";
         favoriteCities.push(newFavoritecity);
         localStorage.setItem("favorite", JSON.stringify(favoriteCities));
         alert("The city has saved successfully!!");
@@ -28,4 +46,5 @@ const favoriteBtn = () => {
     console.log(favoriteCities);
 };
 
-document.querySelector(".icon").addEventListener("click", favoriteBtn);
+isFavorite();
+$icon.addEventListener("click", favoriteBtn);
