@@ -15,7 +15,6 @@ const newFavoritecity = {
 };
 
 let favoriteCities = JSON.parse(localStorage.getItem("favorite")) || [];
-console.log(favoriteCities);
 
 const isDataExisted = favoriteCities.some(
     (favoriteCity) => favoriteCity.name === cityName,
@@ -43,7 +42,6 @@ const favoriteBtn = () => {
         localStorage.setItem("favorite", JSON.stringify(favoriteCities));
         alert("The city has saved successfully!!");
     }
-    console.log(favoriteCities);
 };
 
 isFavorite();
