@@ -20,16 +20,23 @@ const getCurrentWeather = async ({ latitude, longitude }) => {
 (() => {
     const VANCOUVER_LAT = "49.2827";
     const VANCOUVER_LON = "-123.1207";
-    const param = {
-        latitude: VANCOUVER_LAT,
-        longitude: VANCOUVER_LON,
-    };
-    navigator.geolocation.getCurrentPosition((position) => {
-        param.lat = position.coords.latitude;
-        param.lng = position.coords.longitude;
-    });
 
-    getCurrentWeather(param).catch((error) => {
-        console.error(error);
-    });
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            getCurrentWeather({
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+            }).catch((error) => {
+                console.error(error);
+            });
+        },
+        () => {
+            getCurrentWeather({
+                latitude: VANCOUVER_LAT,
+                longitude: VANCOUVER_LON,
+            }).catch((error) => {
+                console.error(error);
+            });
+        },
+    );
 })();

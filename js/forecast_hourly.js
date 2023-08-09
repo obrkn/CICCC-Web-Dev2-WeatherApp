@@ -1,17 +1,12 @@
 /**
  *
- * @param {{lat: string; lon: string; targetIndex: number; }} param
+ * @param {{latitude: string; longitude: string; targetIndex: number; }} param
  * @return {void}
  */
-const forecastHourlyApi = async ({ lat, lon, targetIndex }) => {
+const forecastHourlyApi = async ({ latitude, longitude, targetIndex }) => {
     const API_KEY = "9c6c9f9d647a782c8d910a14542ffff5";
 
-    const VANCOUVER_LAT = "49.2827";
-    const VANCOUVER_LON = "-123.1207";
-
-    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${
-        lat ?? VANCOUVER_LAT
-    }&lon=${lon ?? VANCOUVER_LON}&units=imperial&appid=${API_KEY}`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${API_KEY}`;
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -77,29 +72,35 @@ const forecastHourlyApi = async ({ lat, lon, targetIndex }) => {
 (() => {
     const VANCOUVER_LAT = "49.2827";
     const VANCOUVER_LON = "-123.1207";
-    const param = {
-        lat: VANCOUVER_LAT,
-        lon: VANCOUVER_LON,
-    };
-    navigator.geolocation.getCurrentPosition((position) => {
-        param.lat = position.coords.latitude;
-        param.lng = position.coords.longitude;
-    });
 
-    forecastHourlyApi({
-        ...param,
-        targetIndex: 0,
-    }).catch((error) => {
-        console.error(error);
-    });
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            forecastHourlyApi({
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+                targetIndex: 0,
+            }).catch((error) => {
+                console.error(error);
+            });
+        },
+        () => {
+            forecastHourlyApi({
+                latitude: VANCOUVER_LAT,
+                longitude: VANCOUVER_LON,
+                targetIndex: 0,
+            }).catch((error) => {
+                console.error(error);
+            });
+        },
+    );
 })();
 
 document.querySelectorAll("#daily .card").forEach((card, index) => {
     card.addEventListener("click", (event) => {
         event.preventDefault();
         forecastHourlyApi({
-            lat: undefined,
-            lon: undefined,
+            latitude: document.querySelector("#city-lat").textContent,
+            longitude: document.querySelector("#city-lon").textContent,
             targetIndex: index,
         }).catch((error) => {
             console.error(error);
