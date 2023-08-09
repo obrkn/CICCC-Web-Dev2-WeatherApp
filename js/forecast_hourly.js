@@ -55,23 +55,37 @@ const forecastHourlyApi = async ({ lat, lon, targetIndex }) => {
     }
     console.log(dataEveryThreeHours);
 
+    const wrapperDom = document.querySelector("#hourly .wrapper");
+    while (wrapperDom.firstChild) {
+        wrapperDom.removeChild(wrapperDom.firstChild);
+    }
     for (let i = 0; i < dataEveryThreeHours.length; i++) {
         const data = dataEveryThreeHours[i];
 
-        const card = document.querySelectorAll("#hourly .card").item(i);
-        const pTags = card.querySelectorAll("p");
+        const cardDom = document.createElement("div");
+        cardDom.setAttribute("class", "card");
+        wrapperDom.appendChild(cardDom);
+
         // day
-        pTags.item(0).textContent = data.time;
+        const dayDom = document.createElement("p");
+        dayDom.textContent = data.time;
+        cardDom.appendChild(dayDom);
+
         // image of weather
-        card.querySelector("img").setAttribute(
+        const imgDom = document.createElement("img");
+        imgDom.setAttribute(
             "src",
             // https://openweathermap.org/weather-conditions
             `https://openweathermap.org/img/wn/${data.weatherIcon}@2x.png`,
         );
+        cardDom.appendChild(imgDom);
+
         // temperature
-        pTags.item(1).textContent = `${Math.round(data.temp_max)}/${Math.round(
+        const temperatureDom = document.createElement("p");
+        temperatureDom.textContent = `${Math.round(data.temp_max)}/${Math.round(
             data.temp_min,
         )}°F`;
+        cardDom.appendChild(temperatureDom);
     }
 };
 
