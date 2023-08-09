@@ -6,12 +6,7 @@
 const forecastDailyApi = async ({ lat, lon }) => {
     const API_KEY = "9c6c9f9d647a782c8d910a14542ffff5";
 
-    const VANCOUVER_LAT = "49.2827";
-    const VANCOUVER_LON = "-123.1207";
-
-    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${
-        lat ?? VANCOUVER_LAT
-    }&lon=${lon ?? VANCOUVER_LON}&units=imperial&appid=${API_KEY}`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${API_KEY}`;
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -106,10 +101,25 @@ const forecastDailyApi = async ({ lat, lon }) => {
     }
 };
 
-forecastDailyApi({
-    lat: undefined,
-    lon: undefined,
-    // part: "hourly,daily",
-}).catch((error) => {
-    console.error(error);
-});
+(() => {
+    const VANCOUVER_LAT = "49.2827";
+    const VANCOUVER_LON = "-123.1207";
+    const param = {
+        lat: VANCOUVER_LAT,
+        lon: VANCOUVER_LON,
+    };
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            param.lat = position.coords.latitude;
+            param.lng = position.coords.longitude;
+        },
+        (error) => {
+            console.error(error);
+        },
+        {},
+    );
+
+    forecastDailyApi(param).catch((error) => {
+        console.error(error);
+    });
+})();

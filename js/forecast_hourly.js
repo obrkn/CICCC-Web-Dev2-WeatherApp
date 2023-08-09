@@ -53,7 +53,6 @@ const forecastHourlyApi = async ({ lat, lon, targetIndex }) => {
             });
         }
     }
-    console.log(dataEveryThreeHours);
 
     for (let i = 0; i < dataEveryThreeHours.length; i++) {
         const data = dataEveryThreeHours[i];
@@ -75,13 +74,28 @@ const forecastHourlyApi = async ({ lat, lon, targetIndex }) => {
     }
 };
 
-forecastHourlyApi({
-    lat: undefined,
-    lon: undefined,
-    targetIndex: 0,
-}).catch((error) => {
-    console.error(error);
-});
+(() => {
+    const VANCOUVER_LAT = "49.2827";
+    const VANCOUVER_LON = "-123.1207";
+    const param = {
+        lat: VANCOUVER_LAT,
+        lon: VANCOUVER_LON,
+    };
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            param.lat = position.coords.latitude;
+            param.lng = position.coords.longitude;
+        },
+        (error) => {
+            console.error(error);
+        },
+        {},
+    );
+
+    forecastHourlyApi(param).catch((error) => {
+        console.error(error);
+    });
+})();
 
 document.querySelectorAll("#daily .card").forEach((card, index) => {
     card.addEventListener("click", (event) => {
