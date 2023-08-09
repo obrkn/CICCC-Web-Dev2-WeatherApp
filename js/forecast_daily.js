@@ -108,16 +108,10 @@ const forecastDailyApi = async ({ lat, lon }) => {
         lat: VANCOUVER_LAT,
         lon: VANCOUVER_LON,
     };
-    navigator.geolocation.getCurrentPosition(
-        (position) => {
-            param.lat = position.coords.latitude;
-            param.lng = position.coords.longitude;
-        },
-        (error) => {
-            console.error(error);
-        },
-        {},
-    );
+    navigator.geolocation.getCurrentPosition((position) => {
+        param.lat = position.coords.latitude;
+        param.lng = position.coords.longitude;
+    });
 
     forecastDailyApi(param).catch((error) => {
         console.error(error);

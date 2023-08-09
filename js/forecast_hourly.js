@@ -81,16 +81,10 @@ const forecastHourlyApi = async ({ lat, lon, targetIndex }) => {
         lat: VANCOUVER_LAT,
         lon: VANCOUVER_LON,
     };
-    navigator.geolocation.getCurrentPosition(
-        (position) => {
-            param.lat = position.coords.latitude;
-            param.lng = position.coords.longitude;
-        },
-        (error) => {
-            console.error(error);
-        },
-        {},
-    );
+    navigator.geolocation.getCurrentPosition((position) => {
+        param.lat = position.coords.latitude;
+        param.lng = position.coords.longitude;
+    });
 
     forecastHourlyApi(param).catch((error) => {
         console.error(error);

@@ -24,16 +24,10 @@ const getCurrentWeather = async ({ latitude, longitude }) => {
         latitude: VANCOUVER_LAT,
         longitude: VANCOUVER_LON,
     };
-    navigator.geolocation.getCurrentPosition(
-        (position) => {
-            param.lat = position.coords.latitude;
-            param.lng = position.coords.longitude;
-        },
-        (error) => {
-            console.error(error);
-        },
-        {},
-    );
+    navigator.geolocation.getCurrentPosition((position) => {
+        param.lat = position.coords.latitude;
+        param.lng = position.coords.longitude;
+    });
 
     getCurrentWeather(param).catch((error) => {
         console.error(error);
