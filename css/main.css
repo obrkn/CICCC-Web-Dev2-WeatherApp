@@ -83,6 +83,9 @@ body {
 #daily .wrapper .card {
   margin: 0 20px;
 }
+#daily .wrapper .card:hover {
+  cursor: pointer;
+}
 
 #header h1 {
   padding: 12px 0;
