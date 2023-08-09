@@ -23,5 +23,9 @@
 
     .card {
         margin: 0 20px;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }

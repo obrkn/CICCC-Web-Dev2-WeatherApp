@@ -3,7 +3,7 @@
  * @param {{lat: string; lon: string; }} param
  * @return {void}
  */
-const forecastHourlyApi = async ({ lat, lon }) => {
+const forecastDailyApi = async ({ lat, lon }) => {
     const API_KEY = "9c6c9f9d647a782c8d910a14542ffff5";
 
     const VANCOUVER_LAT = "49.2827";
@@ -106,7 +106,7 @@ const forecastHourlyApi = async ({ lat, lon }) => {
     }
 };
 
-forecastHourlyApi({
+forecastDailyApi({
     lat: undefined,
     lon: undefined,
     // part: "hourly,daily",
