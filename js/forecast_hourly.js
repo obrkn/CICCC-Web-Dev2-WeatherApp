@@ -86,7 +86,10 @@ const forecastHourlyApi = async ({ lat, lon, targetIndex }) => {
         param.lng = position.coords.longitude;
     });
 
-    forecastHourlyApi(param).catch((error) => {
+    forecastHourlyApi({
+        ...param,
+        targetIndex: 0,
+    }).catch((error) => {
         console.error(error);
     });
 })();
