@@ -3,31 +3,31 @@ let autocomplete;
 function onPlaceChanged() {
     const place = autocomplete.getPlace();
     document.getElementById("city-name").innerHTML = place.name;
-    const lat = place.geometry.location.lat().toFixed(4);
-    document.getElementById("city-lat").innerHTML = lat;
-    const lon = place.geometry.location.lng().toFixed(4);
-    document.getElementById("city-lon").innerHTML = lon;
+    const latitude = place.geometry.location.lat().toFixed(4);
+    document.getElementById("city-lat").innerHTML = latitude;
+    const longitude = place.geometry.location.lng().toFixed(4);
+    document.getElementById("city-lon").innerHTML = longitude;
 
     // eslint-disable-next-line no-undef
     getCurrentWeather({
-        latitude: lat,
-        longitude: lon,
+        latitude,
+        longitude,
     }).catch((error) => {
         console.error(error);
     });
 
     // eslint-disable-next-line no-undef
     forecastDailyApi({
-        lat,
-        lon,
+        latitude,
+        longitude,
     }).catch((error) => {
         console.error(error);
     });
 
     // eslint-disable-next-line no-undef
     forecastHourlyApi({
-        lat,
-        lon,
+        latitude,
+        longitude,
         targetIndex: 0,
     }).catch((error) => {
         console.error(error);
