@@ -9,11 +9,11 @@ $mobile-size: 375px;
 
 body {
     min-height: 100vh;
-    font-family: $font-lato;
     font-size: large;
-    line-height: 1.5;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
     color: #333;
-    background-color: #fff;
+    line-height: 1.6;
 }
 
 .container {
