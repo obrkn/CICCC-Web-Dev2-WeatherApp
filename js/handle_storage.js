@@ -138,4 +138,5 @@ const switchFavorite = (e) => {
 showfavoriteList();
 isFavorite();
 $icon.addEventListener("click", favoriteBtn);
+$iconFill.addEventListener("click", favoriteBtn);
 favoriteList.addEventListener("change", switchFavorite);

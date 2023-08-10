@@ -1,3 +1,11 @@
+#daily {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
 #daily h2 {
     margin-bottom: 10px;
     font-size: 2.4rem;
@@ -7,11 +15,11 @@
 #daily .card {
     width: 40%;
     min-width: 100px;
-    padding: 20px 0;
     margin: 0 auto;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+    background-color: #f7f9fc;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 #daily .wrapper {
@@ -19,7 +27,6 @@
     display: flex;
     padding: 20px;
     text-align: center;
-    border: 1px solid #ccc;
 
     .card {
         margin: 0 20px;
