@@ -1,5 +1,12 @@
+#current {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
 #current h2 {
-    margin-bottom: 10px;
     font-size: 2.4rem;
     font-weight: 300;
 }
@@ -7,33 +14,36 @@
 #current h3 {
     margin-bottom: 10px;
     font-size: 1.8rem;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 #current .wrapper {
     position: relative;
     padding: 20px;
     text-align: center;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
 }
 
 #current .card {
-    width: 40%;
+    width: 60%;
     min-width: 100px;
-    padding: 20px 0;
-    margin: 0 auto;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+    margin: 10px auto;
+    background-color: #f7f9fc;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 #current .icon {
     position: absolute;
     top: 16px;
     right: 40px;
+    cursor: pointer;
 }
 
 #current .fill {
-    z-index: -10;
     display: none;
 }
