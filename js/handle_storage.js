@@ -96,3 +96,4 @@ observer.observe($cityName, config);
 showfavoriteList();
 isFavorite();
 $icon.addEventListener("click", favoriteBtn);
+$iconFill.addEventListener("click", favoriteBtn);
