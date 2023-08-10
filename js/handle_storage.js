@@ -93,7 +93,50 @@ const observer = new MutationObserver(cityNameChangedCallback);
 const config = { characterData: true, subtree: true, childList: true };
 observer.observe($cityName, config);
 
+const switchFavorite = (e) => {
+    const selectedCityName = e.target.value;
+    updateFavoriteCities();
+    const selectedCity = favoriteCities.filter(
+        (favoriteCity) => favoriteCity.name === e.target.value,
+    );
+    const latitude = selectedCity[0].lat;
+    const longitude = selectedCity[0].lon;
+
+    function PlaceChanged() {
+        document.getElementById("city-name").innerHTML = selectedCityName;
+        document.getElementById("city-lat").innerHTML = latitude;
+        document.getElementById("city-lon").innerHTML = longitude;
+
+        // eslint-disable-next-line no-undef
+        getCurrentWeather({
+            latitude,
+            longitude,
+        }).catch((error) => {
+            console.error(error);
+        });
+
+        // eslint-disable-next-line no-undef
+        forecastDailyApi({
+            latitude,
+            longitude,
+        }).catch((error) => {
+            console.error(error);
+        });
+
+        // eslint-disable-next-line no-undef
+        forecastHourlyApi({
+            latitude,
+            longitude,
+            targetIndex: 0,
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
+    PlaceChanged();
+};
+
 showfavoriteList();
 isFavorite();
 $icon.addEventListener("click", favoriteBtn);
 $iconFill.addEventListener("click", favoriteBtn);
+favoriteList.addEventListener("change", switchFavorite);
