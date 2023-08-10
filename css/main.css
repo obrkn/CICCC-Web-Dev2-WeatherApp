@@ -36,6 +36,11 @@ body {
   font-weight: 600;
 }
 
+#current .place {
+  font-weight: bold;
+  padding: 0 5px;
+}
+
 #current .wrapper {
   position: relative;
   padding: 20px;
