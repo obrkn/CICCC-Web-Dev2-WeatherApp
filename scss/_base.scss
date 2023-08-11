@@ -21,3 +21,15 @@ body {
     padding: 0 20px;
     margin: 60px auto;
 }
+
+@mixin mobile {
+    @media (max-width: 420px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 960px) {
+        @content;
+    }
+}

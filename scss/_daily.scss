@@ -4,22 +4,37 @@
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
+    @include mobile {
+        margin: 40px 15px;
+        text-align: center;
+    }
 }
 
 #daily h2 {
     margin-bottom: 10px;
     font-size: 2.4rem;
     font-weight: 300;
+    @include mobile {
+        font-size: 2rem;
+    }
 }
 
 #daily .card {
     width: 40%;
     min-width: 100px;
-    margin: 0 auto;
+    margin: 0 10px;
     background-color: #f7f9fc;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        cursor: pointer;
+    }
+    @include mobile {
+        width: 100%;
+        margin: 10px 0;
+    }
 }
 
 #daily .wrapper {
@@ -27,12 +42,7 @@
     display: flex;
     padding: 20px;
     text-align: center;
-
-    .card {
-        margin: 0 20px;
-
-        &:hover {
-            cursor: pointer;
-        }
+    @include mobile {
+        flex-direction: column;
     }
 }

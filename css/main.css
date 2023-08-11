@@ -24,10 +24,21 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
 }
+@media (max-width: 420px) {
+  #current {
+    margin: 0 15px;
+    text-align: center;
+  }
+}
 
 #current h2 {
   font-size: 2.4rem;
   font-weight: 300;
+}
+@media (max-width: 420px) {
+  #current h2 {
+    font-size: 2rem;
+  }
 }
 
 #current h3 {
@@ -59,12 +70,24 @@ body {
   align-items: center;
   justify-content: space-around;
 }
+@media (max-width: 420px) {
+  #current .card {
+    flex-direction: column;
+    width: 80%;
+  }
+}
 
 #current .icon {
   position: absolute;
   top: 16px;
   right: 40px;
   cursor: pointer;
+}
+@media (max-width: 420px) {
+  #current .icon {
+    top: 32px;
+    right: 30px;
+  }
 }
 
 #current .fill {
@@ -78,21 +101,41 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
 }
+@media (max-width: 420px) {
+  #daily {
+    margin: 40px 15px;
+    text-align: center;
+  }
+}
 
 #daily h2 {
   margin-bottom: 10px;
   font-size: 2.4rem;
   font-weight: 300;
 }
+@media (max-width: 420px) {
+  #daily h2 {
+    font-size: 2rem;
+  }
+}
 
 #daily .card {
   width: 40%;
   min-width: 100px;
-  margin: 0 auto;
+  margin: 0 10px;
   background-color: #f7f9fc;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+#daily .card:hover {
+  cursor: pointer;
+}
+@media (max-width: 420px) {
+  #daily .card {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 
 #daily .wrapper {
@@ -101,11 +144,10 @@ body {
   padding: 20px;
   text-align: center;
 }
-#daily .wrapper .card {
-  margin: 0 20px;
-}
-#daily .wrapper .card:hover {
-  cursor: pointer;
+@media (max-width: 420px) {
+  #daily .wrapper {
+    flex-direction: column;
+  }
 }
 
 #header {
@@ -120,6 +162,11 @@ body {
   font-weight: 500;
   letter-spacing: 2px;
 }
+@media (max-width: 420px) {
+  #header h1 {
+    font-size: 1.8rem;
+  }
+}
 
 #hourly {
   margin-top: 20px;
@@ -128,11 +175,22 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
 }
+@media (max-width: 420px) {
+  #hourly {
+    margin: 40px 15px;
+    text-align: center;
+  }
+}
 
 #hourly h2 {
   margin-bottom: 10px;
   font-size: 2.4rem;
   font-weight: 300;
+}
+@media (max-width: 420px) {
+  #hourly h2 {
+    font-size: 2rem;
+  }
 }
 
 #hourly .wrapper {
@@ -140,6 +198,20 @@ body {
   display: flex;
   padding: 20px;
   text-align: center;
+}
+@media (max-width: 960px) {
+  #hourly .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 15px;
+  }
+}
+@media (max-width: 420px) {
+  #hourly .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+  }
 }
 #hourly .wrapper .card {
   width: 40%;
@@ -149,12 +221,32 @@ body {
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+@media (max-width: 960px) {
+  #hourly .wrapper .card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 420px) {
+  #hourly .wrapper .card {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 
 #select {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 420px) {
+  #select {
+    flex-direction: column-reverse;
+    gap: 20px;
+    margin: 30px auto;
+  }
 }
 
 #favorite-cities,
@@ -163,7 +255,6 @@ body {
   padding: 12px 20px;
   border: none;
   border-radius: 25px;
-  /* background-color: #f2f4f8; */
   font-size: 16px;
   color: #555;
   outline: none;

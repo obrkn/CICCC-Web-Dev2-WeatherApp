@@ -4,11 +4,18 @@
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
+    @include mobile {
+        margin: 0 15px;
+        text-align: center;
+    }
 }
 
 #current h2 {
     font-size: 2.4rem;
     font-weight: 300;
+    @include mobile {
+        font-size: 2rem;
+    }
 }
 
 #current h3 {
@@ -39,6 +46,10 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    @include mobile {
+        flex-direction: column;
+        width: 80%;
+    }
 }
 
 #current .icon {
@@ -46,6 +57,10 @@
     top: 16px;
     right: 40px;
     cursor: pointer;
+    @include mobile {
+        top: 32px;
+        right: 30px;
+    }
 }
 
 #current .fill {
