@@ -4,12 +4,19 @@
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
+    @include mobile {
+        margin: 40px 15px;
+        text-align: center;
+    }
 }
 
 #hourly h2 {
     margin-bottom: 10px;
     font-size: 2.4rem;
     font-weight: 300;
+    @include mobile {
+        font-size: 2rem;
+    }
 }
 
 #hourly .wrapper {
@@ -17,6 +24,16 @@
     display: flex;
     padding: 20px;
     text-align: center;
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 15px;
+    }
+    @include mobile {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 15px;
+    }
 
     .card {
         width: 40%;
@@ -26,5 +43,14 @@
         padding: 20px;
         border-radius: 15px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        @include tablet {
+            width: 100%;
+            margin: 10px 0;
+        }
+        @include mobile {
+            width: 100%;
+            margin: 10px 0;
+        }
     }
 }
